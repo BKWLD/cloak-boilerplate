@@ -1,0 +1,19 @@
+{
+	"name": "@cloak-app/boilerplate-demo",
+	"author": "Bukwild",
+	"version": "0.0.2",
+	"license": "UNLICENSED",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt",
+		"build": "nuxt build",
+		"start": "nuxt start",
+		"generate": "nuxt generate --fail-on-error --target=static"
+	},
+	"dependencies": {
+		"@bkwld/cloak": "^1.13.0",
+		"@cloak-app/boilerplate": "../",
+		"@nuxt/content": "1.14.0",
+		"nuxt": "^2.15.7"
+	}
+}
