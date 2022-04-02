@@ -8,7 +8,9 @@
 	"dependencies": {
 		"@bkwld/credits": "^0.3.0",
 		"@nuxtjs/axios": "^5",
+		"lodash": "^4.0.0",
 		"nuxt-coffeescript-module": "^2.3.0",
+		"nuxt-fontagon": "^1.0.4",
 		"webpack-graphql-loader": "gpoitch/graphql-loader#gp/refresh"
 	}
 }

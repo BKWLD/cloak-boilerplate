@@ -7,6 +7,7 @@ export default function() {
 		'coffeescript',
 		'components',
 		'credits',
+		'fontagon',
 		'graphql',
 	]
 
