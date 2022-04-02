@@ -5,6 +5,7 @@ export default function() {
 	const modules = this.options.cloak?.boilerplate?.modules || [
 		'axios',
 		'coffeescript',
+		'components',
 		'graphql',
 	]
 
