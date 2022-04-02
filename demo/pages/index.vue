@@ -9,10 +9,10 @@ nuxt-content(:document='page')
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-import pageMixin from '@bkwld/cloak/mixins/page'
+# import pageMixin from '@bkwld/cloak/mixins/page'
 export default
 
-	mixins: [ pageMixin ]
+	# mixins: [ pageMixin ]
 
 	# Get page content
 	asyncData: ({ app, params, $content }) ->
