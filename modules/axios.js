@@ -1,3 +1,6 @@
+/*
+ * Configure axios
+ */
 export default function() {
 
 	// Add the Axios Nuxt module

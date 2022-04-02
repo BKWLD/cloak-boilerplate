@@ -1,6 +1,7 @@
+/*
+ * Add GraphQL Loader
+ */
 export default function() {
-
-	// Add GraphQL Loader
 	this.extendBuild((config, { isDev}) => {
 		config.module.rules.push({
 			test: /\.gql?$/,

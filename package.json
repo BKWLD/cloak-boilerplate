@@ -6,6 +6,7 @@
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
 	"dependencies": {
+		"@bkwld/credits": "^0.3.0",
 		"@nuxtjs/axios": "^5",
 		"nuxt-coffeescript-module": "^2.3.0",
 		"webpack-graphql-loader": "gpoitch/graphql-loader#gp/refresh"

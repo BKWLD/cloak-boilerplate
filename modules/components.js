@@ -1,3 +1,6 @@
+/*
+ * Configure nuxt/components
+ */
 import { join } from 'path'
 import { existsSync } from 'fs'
 export default function() {

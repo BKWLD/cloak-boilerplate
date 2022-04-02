@@ -6,6 +6,7 @@ export default function() {
 		'axios',
 		'coffeescript',
 		'components',
+		'credits',
 		'graphql',
 	]
 

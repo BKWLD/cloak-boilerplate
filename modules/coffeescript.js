@@ -1,6 +1,6 @@
+/*
+ * Add support for coffeescript
+ */
 export default function() {
-
-	// Adds Coffeescript support
 	this.requireModule('nuxt-coffeescript-module')
-
 }
