@@ -10,4 +10,4 @@ Modules that setup standard Cloak conventions.  [View demo](https://cloak-boiler
 ### Module Options
 
 - `cloak.boilerplate:`
-  - `maxWidthClass` - The default max-width class to use for the block.
+  - `modules` - An array of filenames from to include from the [modules](./modules) directory.  By default, all modules are included.
