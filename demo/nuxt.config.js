@@ -14,7 +14,7 @@ export default mergeConfig(boilerplate, {
 	// Example settings
 	cloak: {
 		boilerplate: {
-			blockMaxWidthClass: 'max-w',
+			// blockMaxWidthClass: 'max-w',
 		}
 	},
 

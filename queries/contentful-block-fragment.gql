@@ -1,4 +1,0 @@
-# Fetch a boilerplate block
-fragment boilerplateBlock on BlockBoilerplate {
-	# Fields go here
-}
