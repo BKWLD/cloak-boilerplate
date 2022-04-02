@@ -6,6 +6,7 @@
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@nuxtjs/axios": "^5"
+		"@nuxtjs/axios": "^5",
+		"webpack-graphql-loader": "gpoitch/graphql-loader#gp/refresh"
 	}
 }

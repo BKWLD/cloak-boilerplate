@@ -1,12 +1,5 @@
-// Use Cloak to make boilerplate
-import { mergeConfig, makeBoilerplate } from '@bkwld/cloak'
-const boilerplate = makeBoilerplate({
-	siteName: '@cloak-app/boilerplate demo',
-	cms: '@nuxt/content',
-})
-
 // Nuxt config
-export default mergeConfig(boilerplate, {
+export default {
 
 	// Load this package
 	buildModules: ['@cloak-app/boilerplate/nuxt'],
@@ -33,4 +26,4 @@ export default mergeConfig(boilerplate, {
 			devtools: true
 		}
 	},
-})
+}

@@ -3,7 +3,8 @@ export default function() {
 
 	// Set default modules
 	const modules = this.options.cloak?.boilerplate?.modules || [
-		'axios'
+		'axios',
+		'graphql',
 	]
 
 	// Load modules
