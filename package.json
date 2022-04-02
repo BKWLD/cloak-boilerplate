@@ -4,5 +4,8 @@
 	"description": "Modules that setup standard Cloak conventions.",
 	"repository": "git@github.com:BKWLD/cloak-boilerplate.git",
 	"author": "Bukwild <info@bukwild.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"@nuxtjs/axios": "^5"
+	}
 }
