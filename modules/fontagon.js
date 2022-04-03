@@ -3,13 +3,14 @@
  */
 import { join } from 'path'
 import kebabCase from 'lodash/kebabCase'
+import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
 	// Register the module
 	this.requireModule('nuxt-fontagon')
 
 	// Configure to load from project directory
-	this.options.iconFont = {
+	defaultsDeep(this.options, { iconFont: {
 
 		// Generate from the project's assets/fonts/fontagon folder
 		files: ['assets/fonts/fontagon/*.svg'],
@@ -30,8 +31,5 @@ export default function() {
 				.replace(/\.svg$/, '') // Remove the ".svg"
 			return kebabCase(name)
 		},
-
-		// Support overriding from project
-		...this.options.iconFont
-	}
+	}})
 }

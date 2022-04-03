@@ -2,6 +2,7 @@
  * Add GTM module
  */
 import { isDev } from '../helpers/build'
+import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 	if (!process.env.GTM_ID) return
 
@@ -9,7 +10,9 @@ export default function() {
 	this.requireModule('@nuxtjs/gtm')
 
 	// Configure Cloak defaults
-	this.options.gtm = {
+	defaultsDeep(this.options, { gtm: {
+
+		// Load id from ENV
 		id: process.env.GTM_ID,
 
 		// Enable during dev for using GTM preview mode
@@ -25,8 +28,5 @@ export default function() {
 
 		// Show debug events on dev
 		debug: isDev,
-
-		// Support overriding from project
-		...this.options.gtm
-	}
+	}})
 }

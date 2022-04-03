@@ -1,13 +1,13 @@
 import { join } from 'path'
 import { readdirSync, lstatSync } from 'fs'
+import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
 	// Expose common ENV vars
-	this.options.env = {
+	defaultsDeep(this.options.env, {
 		APP_ENV: process.env.APP_ENV || 'dev',
 		URL: process.env.URL,
-		...this.options.env,
-	}
+	})
 
 	// Get the modules to load, requesting all by default
 	const modules = this.options.cloak?.boilerplate?.modules ||
