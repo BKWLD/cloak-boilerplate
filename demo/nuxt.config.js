@@ -18,12 +18,4 @@ export default {
 	content: {
 		liveEdit: false
 	},
-
-	// Enable dev tools in prod
-	vue: {
-		config: {
-			productionTip: false,
-			devtools: true
-		}
-	},
 }
