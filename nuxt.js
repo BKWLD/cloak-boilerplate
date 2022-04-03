@@ -3,6 +3,9 @@ import { readdirSync, lstatSync } from 'fs'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
+	// Have Nuxt transpile resources
+	this.options.build.transpile.push('@cloak-app/boilerplate')
+
 	// Expose common ENV vars
 	defaultsDeep(this.options.env, {
 		APP_ENV: process.env.APP_ENV || 'dev',
@@ -26,7 +29,7 @@ export default function() {
 	helpers.forEach(helperName => {
 		this.addPlugin({
 			src: join(__dirname, 'plugins/inject-helper.js'),
-			fileName: `cloak-boilerplate-helpers.${helperName}.js`,
+			fileName: `cloak-boilerplate-helpers.${helperName}`,
 			options: { helperName: helperName }
 		})
 	})
