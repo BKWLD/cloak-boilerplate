@@ -1,7 +1,7 @@
 /*
  * Add GTM module
  */
-import { isDev } from '../utils/env'
+import { isDev } from '../helpers/build'
 export default function() {
 	if (!process.env.GTM_ID) return
 

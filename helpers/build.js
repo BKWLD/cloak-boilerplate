@@ -1,3 +1,7 @@
+/*
+ * Helpers related to the Nuxt build phase
+ */
+
 // Are we running in dev move?
 export const isDev = process.env.NODE_ENV == 'development'
 

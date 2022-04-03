@@ -10,4 +10,6 @@ Modules that setup standard Cloak conventions.  [View demo](https://cloak-boiler
 ### Module Options
 
 - `cloak.boilerplate:`
-  - `modules` - An array of filenames from to include from the [modules](./modules) directory.  By default, all modules are included.
+  - `helpers` - An array of filenames to include from the [helpers](./helpers) directory.  By default, all helpers are included.
+  - `modules` - An array of filenames to include from the [modules](./modules) directory.  By default, all modules are included.
+  - `polyfills` - Array of [polyfill.io](https://polyfill.io/) keywords.  For example, `["default", "URL", "IntersectionObserver"]`.  If `objectFit` is included, will add the [objectFitPolyfill](https://github.com/constancecchen/object-fit-polyfill) for VueVisual on IE11.
