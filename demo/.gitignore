@@ -1,0 +1,2 @@
+# Add the demo's yarn.lock for Netlify
+!yarn.lock
