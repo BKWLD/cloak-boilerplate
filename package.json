@@ -12,6 +12,7 @@
 		"@nuxtjs/gtm": "^2.0.0",
 		"@nuxtjs/pwa": "^3.0.0",
 		"@nuxtjs/robots": "^2.0.0",
+		"@nuxtjs/sentry": "^5.0.0",
 		"lodash": "^4.0.0",
 		"nuxt-coffeescript-module": "^2.3.0",
 		"nuxt-fontagon": "^1.0.4",
