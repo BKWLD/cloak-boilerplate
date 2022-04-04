@@ -30,8 +30,7 @@ export default function() {
 	})
 	if (packagePolyfills.length) {
 
-		// Add the Nuxt Polyfill module
-		this.requireModule('nuxt-polyfill')
+		// Setup options structure
 		defaultsDeep(this.options, {
 			polyfill: {
 				features: [],
@@ -45,5 +44,8 @@ export default function() {
 				detect: () => document.documentElement.style.objectFit != null
 			})
 		}
+
+		// Add the Nuxt Polyfill module
+		this.requireModule('nuxt-polyfill')
 	}
 }

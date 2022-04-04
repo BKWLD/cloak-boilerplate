@@ -6,9 +6,6 @@ import kebabCase from 'lodash/kebabCase'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
-	// Register the module
-	this.requireModule('nuxt-fontagon')
-
 	// Configure to load from project directory
 	defaultsDeep(this.options, { iconFont: {
 
@@ -32,4 +29,7 @@ export default function() {
 			return kebabCase(name)
 		},
 	}})
+
+	// Register the module
+	this.requireModule('nuxt-fontagon')
 }

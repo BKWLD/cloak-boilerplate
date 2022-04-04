@@ -4,9 +4,6 @@
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
-	// Add the Axios Nuxt module
-	this.requireModule('@nuxtjs/axios')
-
 	// Set default config
 	defaultsDeep(this.options, { axios: {
 
@@ -17,4 +14,7 @@ export default function() {
 		progress: false,
 
 	}})
+
+	// Add the Axios Nuxt module
+	this.requireModule('@nuxtjs/axios')
 }

@@ -7,9 +7,6 @@ import { existsSync } from 'fs'
 import { sortRoutes } from '@nuxt/utils'
 export default function() {
 
-	// Register the vue-routing-anchor-parser module
-	this.requireModule('vue-routing-anchor-parser/nuxt/module')
-
 	// Make the tower slug optional, so the root route will match. This also
 	// adds support for slashes within Tower URIs.
 	if (existsSync(join(this.options.srcDir, 'pages/_tower.vue'))) {
@@ -48,4 +45,6 @@ export default function() {
 		]
 	}})
 
+	// Register the vue-routing-anchor-parser module
+	this.requireModule('vue-routing-anchor-parser/nuxt/module')
 }

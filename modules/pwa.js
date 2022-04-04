@@ -4,9 +4,6 @@
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
-	// Add the PWA module
-	this.requireModule('@nuxtjs/pwa')
-
 	// Set default config
 	const siteName = this.options.cloak?.boilerplate?.siteName
 	defaultsDeep(this.options, { pwa: { manifest: {
@@ -26,4 +23,7 @@ export default function() {
 		ogImage: '',
 		author: '',
 	}}})
+
+	// Add the PWA module
+	this.requireModule('@nuxtjs/pwa')
 }

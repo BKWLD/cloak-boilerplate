@@ -1,5 +1,5 @@
 /*
- * Helpers related to the Nuxt build phase
+ * Helpers related to environment detection
  */
 
 // Are we running in dev move?

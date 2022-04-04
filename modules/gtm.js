@@ -5,9 +5,6 @@ import { isDev } from '../helpers/env'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
-	// Register the module
-	this.requireModule('@nuxtjs/gtm')
-
 	// Configure Cloak defaults
 	defaultsDeep(this.options, { gtm: {
 
@@ -30,4 +27,7 @@ export default function() {
 		// Show debug events on dev
 		debug: isDev,
 	}})
+
+	// Register the module
+	this.requireModule('@nuxtjs/gtm')
 }

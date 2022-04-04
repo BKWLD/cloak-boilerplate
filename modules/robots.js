@@ -5,9 +5,6 @@ import { isPublicProd } from '../helpers/env'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
-	// Register the module
-	this.requireModule('@nuxtjs/robots')
-
 	// Create allowing robots.txt when site is live
 	if (isPublicProd) {
 		defaultsDeep(this.options, { robots: {
@@ -23,4 +20,7 @@ export default function() {
 			Disallow: '/'
 		}})
 	}
+
+	// Register the module
+	this.requireModule('@nuxtjs/robots')
 }

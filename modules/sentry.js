@@ -5,9 +5,6 @@ import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 	if (!process.env.SENTRY_DSN) return
 
-	// Register the module
-	this.requireModule('@nuxtjs/sentry')
-
 	// Configure module
 	defaultsDeep(this.options, { sentry: {
 		config: {
@@ -24,4 +21,7 @@ export default function() {
 			}
 		},
 	}})
+
+	// Register the module
+	this.requireModule('@nuxtjs/sentry')
 }
