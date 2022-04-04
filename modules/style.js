@@ -26,9 +26,7 @@ export default function() {
 	}
 
 	// Add style-resources module
-	if (this.nuxt.options.dev) {
-		this.requireModule('@nuxtjs/style-resources')
-	}
+	this.requireModule('@nuxtjs/style-resources')
 
 	// Disable cssnano's Calc transfrom, which beefs with fluid(). The `plugins`
 	// property wasn't set by default, which is why I'm using defaultsDeep here.
