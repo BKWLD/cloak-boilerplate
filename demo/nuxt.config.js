@@ -7,7 +7,8 @@ export default {
 	// Example settings
 	cloak: {
 		boilerplate: {
-			// blockMaxWidthClass: 'max-w',
+			siteName: '@cloak-app/boilerplate demo',
+			// polyfills: ['default']
 		}
 	},
 
