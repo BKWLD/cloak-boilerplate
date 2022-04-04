@@ -1,7 +1,7 @@
 /*
  * Add GTM module
  */
-import { isDev } from '../helpers/build'
+import { isDev } from '../helpers/env'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 	if (!process.env.GTM_ID) return

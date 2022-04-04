@@ -1,7 +1,7 @@
 /*
  * Tweaks intended for perf
  */
-import { isDev } from '../helpers/build'
+import { isDev } from '../helpers/env'
 export default function() {
 
 	// Extract CSS into seperate files when statically generating to reduce JS
