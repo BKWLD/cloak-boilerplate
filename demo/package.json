@@ -11,7 +11,7 @@
 		"generate": "nuxt generate --fail-on-error --target=static"
 	},
 	"dependencies": {
-		"@cloak-app/boilerplate": "*",
+		"@cloak-app/boilerplate": "BKWLD/cloak-boilerplate",
 		"@nuxt/content": "1.14.0",
 		"nuxt": "^2.15.7"
 	}
