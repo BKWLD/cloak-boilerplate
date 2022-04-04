@@ -28,7 +28,8 @@ export default function() {
 	// Add style-resources module
 	this.requireModule('@nuxtjs/style-resources')
 
-	// Disable cssnano's Calc transfrom, which beefs with fluid()
+	// Disable cssnano's Calc transfrom, which beefs with fluid(). The `plugins`
+	// property wasn't set by default, which is why I'm using defaultsDeep here.
 	defaultsDeep(this.options.build.postcss, { plugins: {
 		cssnano: isDev ? false :
 			{ preset: [ 'default', { calc: false } ] }
