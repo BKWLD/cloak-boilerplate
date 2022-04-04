@@ -25,10 +25,9 @@ export default function() {
 		// Remove routes that were added to the noindex array
 		filter: ({ routes }) => {
 			const noindex = this.options.sitemap.noindex
-			if (!noindex.length) return
+			if (!noindex.length) return routes
 			return routes.filter(route => !noindex.includes(route.path))
-		},
-
+		}
 	}})
 
 	// Register the module
