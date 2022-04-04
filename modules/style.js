@@ -2,8 +2,8 @@
  * Configure boilerplate styles
  */
 import { isDev } from '../helpers/env'
+import { srcHasPath } from '../utils/filesystem'
 import { join } from 'path'
-import { existsSync } from 'fs'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
@@ -11,17 +11,17 @@ export default function() {
 	this.options.css.push('normalize.css')
 
 	// Add project's app.styl
-	const appStyles = join(this.options.srcDir, 'assets/app.styl')
-	if (existsSync(appStyles)) this.options.css.push(appStyles)
+	if (srcHasPath(this.options, 'assets/app.styl')) {
+		this.options.css.push('~/assets/app.styl')
+	}
 
 	// Add focus-visible
 	this.addPlugin({ src: join(__dirname, '../plugins/focus-visible.js') })
 
 	// Append definitions.styl everwhere
-	const definitionsStyl = join(this.options.srcDir, 'assets/definitions.styl')
-	if (existsSync(definitionsStyl)) {
+	if (srcHasPath(this.options, 'assets/definitions.styl')) {
 		defaultsDeep(this.options, { styleResources: {
-			stylus: definitionsStyl
+			stylus: '~assets/definitions.styl'
 		}})
 	}
 

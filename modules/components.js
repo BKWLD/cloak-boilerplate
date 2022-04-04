@@ -1,8 +1,7 @@
 /*
  * Configure nuxt/components
  */
-import { join } from 'path'
-import { existsSync } from 'fs'
+import { srcHasPath } from '../utils/filesystem'
 export default function() {
 
 	// Enable nuxt/components
@@ -10,8 +9,7 @@ export default function() {
 
 	// Don't require "global" prefix on global components
 	this.nuxt.hook('components:dirs', dirs => {
-		const globalDir = join(this.options.srcDir, 'components/globals')
-		if (existsSync(globalDir)) {
+		if (srcHasPath(this.options, 'components/globals')) {
 			dirs.push({
 				path: globalDir,
 				pathPrefix: false, // Make these root level components
