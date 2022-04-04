@@ -1,5 +1,0 @@
-[build]
-	base = "demo"
-	command = "CI= yarn generate --force-build"
-	publish = "dist"
-	functions = "functions"

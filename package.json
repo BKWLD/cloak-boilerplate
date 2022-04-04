@@ -5,6 +5,12 @@
 	"repository": "git@github.com:BKWLD/cloak-boilerplate.git",
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
+	"scripts": {
+		"dev": "nuxt dev demo",
+		"build": "nuxt build demo",
+		"start": "nuxt start demo",
+		"generate": "nuxt generate --fail-on-error --target=static demo"
+	},
 	"dependencies": {
 		"@bkwld/credits": "^0.3.0",
 		"@nuxt/utils": "^2.15.8",
@@ -31,5 +37,9 @@
 		"stylus-loader": "^3.0.0",
 		"vue-routing-anchor-parser": "^1.13.1",
 		"webpack-graphql-loader": "gpoitch/graphql-loader#gp/refresh"
+	},
+	"devDependencies": {
+		"@nuxt/content": "1.14.0",
+		"nuxt": "^2.15.7"
 	}
 }

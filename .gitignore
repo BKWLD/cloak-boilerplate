@@ -11,9 +11,6 @@ pids
 *.seed
 *.pid.lock
 
-# Lock files
-yarn.lock
-
 # Dependency directories
 node_modules/
 
