@@ -1,6 +1,9 @@
 # @cloak-app/boilerplate
 
-Modules that setup standard Cloak conventions.  [View demo](https://cloak-boilerplate.netlify.app/).
+Modules that setup standard Cloak conventions.
+
+- [View demo](https://cloak-boilerplate.netlify.app/)
+- [Edit CodeSandbox](https://githubbox.com/BKWLD/cloak-boilerplate)
 
 ## Install
 
@@ -21,3 +24,7 @@ Modules that setup standard Cloak conventions.  [View demo](https://cloak-boiler
 
 - No polyfills are added by default
 - Dropping support for Craft SSG generation with payloads
+
+## Contributing
+
+Run `yarn dev` to open a Nuxt dev build of [the demo directory](./demo).
