@@ -2,9 +2,12 @@
 export default {
 
 	// Load this package
-	buildModules: ['@cloak-app/boilerplate/nuxt'],
+	buildModules: [
+		'../nuxt',
+		'@cloak-app/demo-theme/nuxt',
+	],
 
-	// Example settings
+	// Cloak Settings
 	cloak: {
 		boilerplate: {
 			siteName: '@cloak-app/boilerplate demo',
