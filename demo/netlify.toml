@@ -1,0 +1,8 @@
+[build]
+	base = "demo"
+	command = "CI= yarn generate --force-build"
+	publish = "dist"
+	functions = "functions"
+
+	# Trigger redeploys on any change
+	# ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ../"
