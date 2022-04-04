@@ -34,5 +34,7 @@ export default function() {
 	this.options.generate.cache.ignore.push('**/fontagon/dist/*')
 
 	// Register the module
-	this.requireModule('nuxt-fontagon')
+	if (this.nuxt.options.dev) {
+		this.requireModule('nuxt-fontagon')
+	}
 }

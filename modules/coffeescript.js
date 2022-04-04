@@ -2,5 +2,7 @@
  * Add support for coffeescript
  */
 export default function() {
-	this.requireModule('nuxt-coffeescript-module')
+	if (this.nuxt.options.dev) {
+		this.requireModule('nuxt-coffeescript-module')
+	}
 }
