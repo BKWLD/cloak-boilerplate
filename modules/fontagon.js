@@ -10,8 +10,8 @@ export default function() {
 	defaultsDeep(this.options, { iconFont: {
 
 		// Generate from the project's assets/fonts/fontagon folder
-		files: ['assets/fonts/fontagon/*.svg'],
-		dist: 'assets/fonts/fontagon/dist',
+		files: [join(this.options.srcDir, 'assets/fonts/fontagon/*.svg')],
+		dist: join(this.options.srcDir, 'assets/fonts/fontagon/dist'),
 		fontName: 'fontagon',
 
 		// Use Stylus
