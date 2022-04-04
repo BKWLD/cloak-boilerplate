@@ -4,6 +4,7 @@
 import defaultsDeep from 'lodash/defaultsDeep'
 import { srcHasPath } from '../utils/filesystem'
 import { sortRoutes } from '@nuxt/utils'
+import { nonEmpty } from '../helpers/array'
 export default function() {
 
 	// Make the tower slug optional, so the root route will match. This also
@@ -18,7 +19,12 @@ export default function() {
 	// Add default anchor parser rules
 	defaultsDeep(this.options, { anchorParser: {
 		addBlankToExternal: true,
-		internalUrls: [
+	}})
+
+	// Manually set internalUrls values because defaultsDeep doesn't replace
+	// arrays when found (it replaces items by matching on the key)
+	if (!this.options.anchorParser?.internalUrls) {
+		this.options.anchorParser.internalUrls = nonEmpty([
 
 			// Local dev
 			/^https?:\/\/localhost:\d+/,
@@ -36,13 +42,17 @@ export default function() {
 				const name = process.env.URL.replace(/[\-]/g, '\\$&')
 				return new RegExp(`^https?:\/\/${name}\.netlify\.app`)
 			})()
-		],
-		externalPaths: [
+		])
+	}
+
+	// Also manually set externalPaths
+	if (!this.options.anchorParser?.externalPaths) {
+		this.options.anchorParser.externalPaths = [
 
 			// Don't client-side navigate to Netlify functions
 			/^\/\.netlify/,
 		]
-	}})
+	}
 
 	// Register the vue-routing-anchor-parser module
 	this.requireModule('vue-routing-anchor-parser/nuxt/module')
