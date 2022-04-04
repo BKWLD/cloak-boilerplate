@@ -16,7 +16,12 @@ export default function() {
 	}
 
 	// Add focus-visible
-	this.addPlugin({ src: join(__dirname, '../plugins/focus-visible.js') })
+	this.addPlugin({
+		src: join(__dirname, '../plugins/focus-visible.js'),
+		options: {
+			assetsDir: join(__dirname, '../assets'),
+		}
+	})
 
 	// Append definitions.styl everwhere
 	if (srcHasPath(this.options, 'assets/definitions.styl')) {

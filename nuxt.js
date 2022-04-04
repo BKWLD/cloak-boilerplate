@@ -30,7 +30,9 @@ export default function() {
 		this.addPlugin({
 			src: join(__dirname, 'plugins/inject-helper.js'),
 			fileName: `cloak-boilerplate-helpers.${helperName}`,
-			options: { helperName: helperName }
+			options: {
+				helperFile: join(__dirname, 'helpers', helperName),
+			}
 		})
 	})
 }
