@@ -30,6 +30,9 @@ export default function() {
 		},
 	}})
 
+	// Don't trigger SSG rebuild if only this dist changes
+	this.options.generate.cache.ignore.push('**/fontagon/dist/*')
+
 	// Register the module
 	this.requireModule('nuxt-fontagon')
 }
