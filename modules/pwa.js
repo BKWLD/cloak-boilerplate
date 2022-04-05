@@ -1,29 +1,42 @@
 /*
  * Configure PWA package
  */
+import { isDev } from '../helpers/env'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
 	// Set default config
 	const siteName = this.options.cloak?.boilerplate?.siteName
-	defaultsDeep(this.options, { pwa: { manifest: {
-		theme_color: 'white',
+	defaultsDeep(this.options, { pwa: {
+		meta: {
 
-		// Some defaults
-		name: siteName,
-		short_name: siteName,
-		ogSiteName: siteName,
-		twitterCard: 'summary_large_image',
+			// Set from options
+			name: siteName,
+			short_name: siteName,
+			ogSiteName: siteName,
+			twitterCard: 'summary_large_image',
 
-		// Don't autogenerate these, rely on the head config and/or normal meta
-		// fields
-		description: '',
-		ogTitle: '',
-		ogDescription: '',
-		ogImage: '',
-		author: '',
-	}}})
+			// Prevent fallback to package.json values
+			theme_color: 'white',
+			description: '',
+			ogTitle: '',
+			ogDescription: '',
+			ogImage: '',
+			author: '',
+		},
+		manifest: {
 
-	// Add the PWA module
-	this.requireModule('@nuxtjs/pwa')
+			// Set from options
+			name: siteName,
+			short_name: siteName,
+
+			// Prevent fallback to package.json values
+			description: ''
+		}
+	}})
+
+	// Add the PWA module when not running dev mode. During dev mode, the
+	// manifest.json was emitting 404 responses.  These only went away when
+	// fully disabling the meta and manifest properites.
+	if (!isDev) this.requireModule('@nuxtjs/pwa')
 }
