@@ -15,6 +15,8 @@ export default function() {
 
 	}})
 
-	// Add the Axios Nuxt module
-	this.requireModule('@nuxtjs/axios')
+	// Add the Axios Nuxt module late so it can be used in plugins
+	this.nuxt.hook('modules:done', moduleContainer => {
+		moduleContainer.requireModule('@nuxtjs/axios')
+	})
 }
