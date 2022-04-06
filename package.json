@@ -13,8 +13,8 @@
 	},
 	"dependencies": {
 		"@bkwld/credits": "^0.3.0",
-		"@nuxt/utils": "^2.15.8",
-		"@nuxtjs/axios": "^5",
+		"@nuxt/utils": "^2.15.0",
+		"@nuxtjs/axios": "^5.0.0",
 		"@nuxtjs/gtm": "^2.0.0",
 		"@nuxtjs/pwa": "^3.0.0",
 		"@nuxtjs/robots": "^2.0.0",
@@ -41,6 +41,6 @@
 	"devDependencies": {
 		"@cloak-app/demo-theme": "^1.0.2",
 		"@nuxt/content": "^1.14.0",
-		"nuxt": "^2.15.7"
+		"nuxt": "^2.14.0"
 	}
 }
