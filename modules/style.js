@@ -25,9 +25,8 @@ export default function() {
 
 	// Append definitions.styl everwhere
 	if (srcHasPath(this.options, 'assets/definitions.styl')) {
-		defaultsDeep(this.options, { styleResources: {
-			stylus: '~assets/definitions.styl'
-		}})
+		defaultsDeep(this.options, { styleResources: { stylus: [] }})
+		this.options.styleResources.stylus.push('~assets/definitions.styl')
 	}
 
 	// Add style-resources module
