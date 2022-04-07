@@ -2,7 +2,7 @@
  * Configure boilerplate styles
  */
 import { isDev } from '../helpers/env'
-import { srcHasPath } from '@cloak-app/utils'
+import { requireOnce, srcHasPath } from '@cloak-app/utils'
 import { join } from 'path'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
@@ -30,9 +30,7 @@ export default function() {
 	}
 
 	// Add style-resources module
-	if (!this.requiredModules['@nuxtjs/style-resources']) {
-		this.requireModule('@nuxtjs/style-resources')
-	}
+	requireOnce(this, '@nuxtjs/style-resources')
 
 	// Disable cssnano's Calc transfrom, which beefs with fluid(). The `plugins`
 	// property wasn't set by default, which is why I'm using defaultsDeep here.

@@ -2,6 +2,7 @@
  * Config Sentry error logging
  */
 import defaultsDeep from 'lodash/defaultsDeep'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 	if (!process.env.SENTRY_DSN) return
 
@@ -23,5 +24,5 @@ export default function() {
 	}})
 
 	// Register the module
-	this.requireModule('@nuxtjs/sentry')
+	requireOnce(this, '@nuxtjs/sentry')
 }

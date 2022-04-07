@@ -2,6 +2,7 @@
  * Add polyfills
  */
 import defaultsDeep from 'lodash/defaultsDeep'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 
 	// Get the list of polyfill keywords
@@ -46,6 +47,6 @@ export default function() {
 		}
 
 		// Add the Nuxt Polyfill module
-		this.requireModule('nuxt-polyfill')
+		requireOnce(this, 'nuxt-polyfill')
 	}
 }

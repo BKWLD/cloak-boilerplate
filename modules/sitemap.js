@@ -3,6 +3,7 @@
  */
 import defaultsDeep from 'lodash/defaultsDeep'
 import { isGenerating } from '../helpers/env'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 	if (!isGenerating) return
   if (!process.env.URL) return // Sitemap fatally errors if missing
@@ -31,5 +32,5 @@ export default function() {
 	}})
 
 	// Register the module
-	this.requireModule('@nuxtjs/sitemap')
+	requireOnce(this, '@nuxtjs/sitemap')
 }

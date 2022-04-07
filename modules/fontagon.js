@@ -4,6 +4,7 @@
 import { join } from 'path'
 import kebabCase from 'lodash/kebabCase'
 import defaultsDeep from 'lodash/defaultsDeep'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 
 	// Configure to load from project directory
@@ -34,5 +35,5 @@ export default function() {
 	this.options.generate.cache.ignore.push('**/fontagon/dist/*')
 
 	// Register the module
-	this.requireModule('nuxt-fontagon')
+	requireOnce(this, 'nuxt-fontagon')
 }

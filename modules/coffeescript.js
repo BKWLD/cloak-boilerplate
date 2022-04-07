@@ -1,6 +1,7 @@
 /*
  * Add support for coffeescript
  */
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
-	this.requireModule('nuxt-coffeescript-module')
+	requireOnce(this, 'nuxt-coffeescript-module')
 }

@@ -2,7 +2,7 @@
  * Add various helpers related to routing
  */
 import defaultsDeep from 'lodash/defaultsDeep'
-import { srcHasPath } from '@cloak-app/utils'
+import { srcHasPath, requireOnce } from '@cloak-app/utils'
 import { sortRoutes } from '@nuxt/utils'
 import { nonEmpty } from '../helpers/array'
 export default function() {
@@ -55,5 +55,5 @@ export default function() {
 	}
 
 	// Register the vue-routing-anchor-parser module
-	this.requireModule('vue-routing-anchor-parser/nuxt/module')
+	requireOnce(this, 'vue-routing-anchor-parser/nuxt/module')
 }

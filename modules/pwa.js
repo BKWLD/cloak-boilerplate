@@ -3,6 +3,7 @@
  */
 import { isDev } from '../helpers/env'
 import defaultsDeep from 'lodash/defaultsDeep'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 
 	// Set default config
@@ -38,5 +39,5 @@ export default function() {
 	// Add the PWA module when not running dev mode. During dev mode, the
 	// manifest.json was emitting 404 responses.  These only went away when
 	// fully disabling the meta and manifest properites.
-	if (!isDev) this.requireModule('@nuxtjs/pwa')
+	if (!isDev) requireOnce(this, '@nuxtjs/pwa')
 }

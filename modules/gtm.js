@@ -3,6 +3,7 @@
  */
 import { isDev } from '../helpers/env'
 import defaultsDeep from 'lodash/defaultsDeep'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 
 	// Configure Cloak defaults
@@ -29,5 +30,5 @@ export default function() {
 	}})
 
 	// Register the module
-	this.requireModule('@nuxtjs/gtm')
+	requireOnce(this, '@nuxtjs/gtm')
 }

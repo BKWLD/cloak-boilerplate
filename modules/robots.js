@@ -3,6 +3,7 @@
  */
 import { isPublicProd } from '../helpers/env'
 import defaultsDeep from 'lodash/defaultsDeep'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 
 	// Create allowing robots.txt when site is live
@@ -22,5 +23,5 @@ export default function() {
 	}
 
 	// Register the module
-	this.requireModule('@nuxtjs/robots')
+	requireOnce(this, '@nuxtjs/robots')
 }
