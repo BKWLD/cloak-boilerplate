@@ -1,7 +1,7 @@
 /*
  * Configure nuxt/components
  */
-import { srcHasPath } from '../utils/filesystem'
+import { srcHasPath } from '@cloak-app/utils'
 export default function() {
 
 	// Enable nuxt/components

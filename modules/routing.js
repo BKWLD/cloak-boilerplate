@@ -2,7 +2,7 @@
  * Add various helpers related to routing
  */
 import defaultsDeep from 'lodash/defaultsDeep'
-import { srcHasPath } from '../utils/filesystem'
+import { srcHasPath } from '@cloak-app/utils'
 import { sortRoutes } from '@nuxt/utils'
 import { nonEmpty } from '../helpers/array'
 export default function() {
