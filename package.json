@@ -1,6 +1,6 @@
 {
 	"name": "@cloak-app/boilerplate",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Modules that setup standard Cloak conventions.",
 	"repository": "git@github.com:BKWLD/cloak-boilerplate.git",
 	"author": "Bukwild <info@bukwild.com>",
