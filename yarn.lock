@@ -939,10 +939,10 @@
   dependencies:
     coffeescript "^2.5.1"
 
-"@cloak-app/demo-theme@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@cloak-app/demo-theme/-/demo-theme-1.0.2.tgz#973229c635ca34f8241a2155a92d35b9bdac7813"
-  integrity sha512-ozOnYwr74SYoWA8aU49r1bKFCDLvyNI0qapyxUkS4GNnGEns6lSt7oL+fV5IIZWpxE3z2ynOGGyz2yc+FaDF3Q==
+"@cloak-app/demo-theme@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@cloak-app/demo-theme/-/demo-theme-1.0.5.tgz#9ac283e0a383025284afed66b9b21526d4294a01"
+  integrity sha512-oq5noLz5r6wmMJtng8VbM1jLzI2kJZNvpen4K7feP6v01W0d5LzTiRMVauWHoghq6o8wFwDcgc5g46Mu01oq7Q==
   dependencies:
     prism-themes "^1.9.0"
 
