@@ -29,8 +29,10 @@ export default function() {
 		this.options.styleResources.stylus.push('~assets/definitions.styl')
 	}
 
-	// Add style-resources module
-	requireOnce(this, '@nuxtjs/style-resources')
+	// Add style-resources module late so other modules can append imports
+	this.nuxt.hook('modules:done', moduleContainer => {
+		requireOnce(moduleContainer, '@nuxtjs/style-resources')
+	})
 
 	// Disable cssnano's Calc transfrom, which beefs with fluid(). The `plugins`
 	// property wasn't set by default, which is why I'm using defaultsDeep here.
