@@ -946,10 +946,10 @@
   dependencies:
     prism-themes "^1.9.0"
 
-"@cloak-app/utils@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@cloak-app/utils/-/utils-1.0.0.tgz#9884b16399c5839e260496acbd7b011e8793f66e"
-  integrity sha512-7K1qMd0Pv7Swk6GzNrcN45cVLAdAGKWRPlHpSUYSBJMEstdytny4gxJKYRyqM2Aps+TSMA1ZwQIKNxb0eG1sfw==
+"@cloak-app/utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@cloak-app/utils/-/utils-1.0.1.tgz#e6cbb84504b0bac15a36da5c63cd76ce4dbb8821"
+  integrity sha512-ndOycoeM3GXmFgyCBKrvWXaagAtl/y70a+rC0MT8Pp6VRXGbglu69qqUEg0yBjZt/bTwBYEe3hNqw5wgrH7B2w==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"

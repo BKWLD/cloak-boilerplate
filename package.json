@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@bkwld/credits": "^0.3.0",
-		"@cloak-app/utils": "^1.0.0",
+		"@cloak-app/utils": "^1.0.1",
 		"@nuxt/utils": "^2.15.0",
 		"@nuxtjs/axios": "^5.0.0",
 		"@nuxtjs/gtm": "^2.0.0",
