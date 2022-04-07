@@ -18,6 +18,6 @@ export default function() {
 
 	// Add the Axios Nuxt module late so it can be used in plugins
 	this.nuxt.hook('modules:done', moduleContainer => {
-		requireOnce(this, '@nuxtjs/style-resources')
+		requireOnce(moduleContainer, '@nuxtjs/axios')
 	})
 }
