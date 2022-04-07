@@ -8,7 +8,7 @@ Modules that setup standard Cloak conventions.
 ## Install
 
 1. Install with `yarn add @cloak-app/boilerplate`
-2. Add to `nuxt.config` with `buildModules: ['@cloak-app/boilerplate/nuxt']`
+2. Add to `nuxt.config` with `buildModules: ['@cloak-app/boilerplate']`
 
 ### Module Options
 

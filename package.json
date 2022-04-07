@@ -5,6 +5,7 @@
 	"repository": "git@github.com:BKWLD/cloak-boilerplate.git",
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
+	"main": "nuxt.js",
 	"scripts": {
 		"dev": "nuxt dev demo",
 		"build": "nuxt build demo",

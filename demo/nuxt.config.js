@@ -4,7 +4,7 @@ export default {
 	// Load this package
 	buildModules: [
 		'../nuxt',
-		'@cloak-app/demo-theme/nuxt',
+		'@cloak-app/demo-theme',
 	],
 
 	// Cloak Settings
