@@ -1,6 +1,7 @@
 import { join } from 'path'
 import { readdirSync, lstatSync } from 'fs'
 import defaultsDeep from 'lodash/defaultsDeep'
+import { requireOnce } from '@cloak-app/utils'
 export default function() {
 
 	// Have Nuxt transpile resources
@@ -18,7 +19,7 @@ export default function() {
 
 	// Load boilerplate modules
 	modules.forEach(moduleName => {
-		this.requireModule(join(__dirname, `modules/${moduleName}`))
+		requireOnce(this, join(__dirname, `modules/${moduleName}`))
 	})
 
 	// Get the helpers to load, requesting all by default
