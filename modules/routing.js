@@ -38,8 +38,8 @@ export default function() {
 
 			// Use Netlify subdomain URL
 			(function() {
-				if (!process.env.URL) return
-				const name = process.env.URL.replace(/[\-]/g, '\\$&')
+				if (!process.env.SITE_NAME) return
+				const name = process.env.SITE_NAME.replace(/[\-]/g, '\\$&')
 				return new RegExp(`^https?:\/\/${name}\.netlify\.app`)
 			})()
 		])
