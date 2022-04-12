@@ -11,7 +11,7 @@ export default function() {
 	this.nuxt.hook('components:dirs', dirs => {
 		if (srcHasPath(this.options, 'components/globals')) {
 			dirs.push({
-				path: globalDir,
+				path: '~/components/globals',
 				pathPrefix: false, // Make these root level components
 			})
 		}
