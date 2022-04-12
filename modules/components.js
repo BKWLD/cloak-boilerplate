@@ -12,18 +12,12 @@ export default function() {
 
 		// Don't require "global" prefix on global components
 		if (srcHasPath(this.options, 'components/globals')) {
-			dirs.push({
-				path: '~/components/globals',
-				pathPrefix: false, // Make these root level components
-			})
+			dirs.push('~/components/globals')
 		}
 
 		// Don't require "pages" prefix on page sub components
 		if (srcHasPath(this.options, 'components/pages')) {
-			dirs.push({
-				path: '~/components/pages',
-				pathPrefix: false,
-			})
+			dirs.push('~/components/pages')
 		}
 	})
 }
