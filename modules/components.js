@@ -7,12 +7,22 @@ export default function() {
 	// Enable nuxt/components
 	this.options.components = true
 
-	// Don't require "global" prefix on global components
+	// Customize auto-importing with cloak conventions
 	this.nuxt.hook('components:dirs', dirs => {
+
+		// Don't require "global" prefix on global components
 		if (srcHasPath(this.options, 'components/globals')) {
 			dirs.push({
 				path: '~/components/globals',
 				pathPrefix: false, // Make these root level components
+			})
+		}
+
+		// Don't require "pages" prefix on page sub components
+		if (srcHasPath(this.options, 'components/pages')) {
+			dirs.push({
+				path: '~/components/pages',
+				pathPrefix: false,
 			})
 		}
 	})
