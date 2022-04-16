@@ -1,7 +1,7 @@
 import { join } from 'path'
 import { readdirSync, lstatSync } from 'fs'
 import defaultsDeep from 'lodash/defaultsDeep'
-import { requireOnce } from '@cloak-app/utils'
+import { requireOnce, getFilenames } from '@cloak-app/utils'
 export default function() {
 
 	// Have Nuxt transpile resources
@@ -36,12 +36,6 @@ export default function() {
 			}
 		})
 	})
-}
-
-// Get all the files in a directory
-// https://stackoverflow.com/a/69929005/59160
-function getFilenames(dir) {
-	return readdirSync(dir).filter(file => lstatSync(`${dir}/${file}`).isFile())
 }
 
 // Required for published modules
