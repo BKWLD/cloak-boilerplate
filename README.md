@@ -14,13 +14,12 @@ Modules that setup standard Cloak conventions.
 
 Set these properties within `cloak: { boilerplate: { ... } }` in the nuxt.config.js:
 
-- `cloak.boilerplate:`
-  - `helpers` - An array of filenames to *include* from the [helpers](./helpers) directory.  By default, all helpers are included. Filename extensions are optional.
-  - `excludedHelpers` - An array of filenames to *exclude* from the [helpers](./helpers) directory.  By default, this is empty. Filename extensions are optional.
-  - `modules` - An array of filenames to *include* from the [modules](./modules) directory.  By default, all modules are included. Filename extensions are optional.
-  - `excludedModules` - An array of filenames to *exclude* from the [modules](./modules) directory.  By default, this is empty. Filename extensions are optional.
-  - `polyfills` - Array of [polyfill.io](https://polyfill.io/) keywords.  For example, `["default", "URL", "IntersectionObserver"]`.  If `objectFit` is included, will add the [objectFitPolyfill](https://github.com/constancecchen/object-fit-polyfill) for VueVisual on IE11.
-  - `siteName` - The name of the site, used to generate `<title>`, OG, and PWA tags.
+- `helpers` - An array of filenames to *include* from the [helpers](./helpers) directory.  By default, all helpers are included. Filename extensions are optional.
+- `excludedHelpers` - An array of filenames to *exclude* from the [helpers](./helpers) directory.  By default, this is empty. Filename extensions are optional.
+- `modules` - An array of filenames to *include* from the [modules](./modules) directory.  By default, all modules are included. Filename extensions are optional.
+- `excludedModules` - An array of filenames to *exclude* from the [modules](./modules) directory.  By default, this is empty. Filename extensions are optional.
+- `polyfills` - Array of [polyfill.io](https://polyfill.io/) keywords.  For example, `["default", "URL", "IntersectionObserver"]`.  If `objectFit` is included, will add the [objectFitPolyfill](https://github.com/constancecchen/object-fit-polyfill) for VueVisual on IE11.
+- `siteName` - The name of the site, used to generate `<title>`, OG, and PWA tags.
 
 ## Breaking Changes
 
