@@ -1,8 +1,14 @@
 import { join } from 'path'
-import { readdirSync, lstatSync } from 'fs'
 import defaultsDeep from 'lodash/defaultsDeep'
 import { requireOnce, getFilenames } from '@cloak-app/utils'
+import consola from 'consola'
 export default function() {
+
+	// Shorthand for referring to the options of this module
+	const ownOptions = this.options.cloak?.boilerplate || {}
+
+	// Make a consola scope
+	const log = consola.withTag('@cloak-app/boilerplate')
 
 	// Have Nuxt transpile resources
 	this.options.build.transpile.push('@cloak-app/boilerplate')
@@ -14,8 +20,11 @@ export default function() {
 	})
 
 	// Get the modules to load, requesting all by default
-	const modules = this.options.cloak?.boilerplate?.modules ||
-		getFilenames(join(__dirname, 'modules'))
+	const modules = (ownOptions.modules ||
+		getFilenames(join(__dirname, 'modules')))
+	.map(addMissingJsExt)
+	.filter(removeExcludedFiles(ownOptions.excludedModules))
+	log.info(`Adding modules ${modules.map(removeJsExt).join(', ')}`)
 
 	// Load boilerplate modules
 	modules.forEach(moduleName => {
@@ -23,8 +32,11 @@ export default function() {
 	})
 
 	// Get the helpers to load, requesting all by default
-	const helpers = this.options.cloak?.boilerplate?.helpers ||
-		getFilenames(join(__dirname, 'helpers'))
+	const helpers = (ownOptions.helpers ||
+		getFilenames(join(__dirname, 'helpers')))
+	.map(addMissingJsExt)
+	.filter(removeExcludedFiles(ownOptions.excludedHelpers))
+	log.info(`Adding helpers ${helpers.map(removeJsExt).join(',')}`)
 
 	// Re-use the inject-helper to inject all methods from helper files
 	helpers.forEach(helperName => {
@@ -36,6 +48,24 @@ export default function() {
 			}
 		})
 	})
+}
+
+// Remove excluded helpers and modules
+function removeExcludedFiles(excluded) {
+	return function(filename) {
+		if (!excluded?.length) return true
+		return !excluded.map(addMissingJsExt).includes(filename)
+	}
+}
+
+// Add .js file exetnsiosns if missing
+function addMissingJsExt(filename) {
+	return filename.match(/\.js$/) ? filename : filename + '.js'
+}
+
+// Remove extensions
+function removeJsExt(filename) {
+	return filename.replace(/\.js$/, '')
 }
 
 // Required for published modules
