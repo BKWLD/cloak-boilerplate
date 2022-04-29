@@ -21,8 +21,8 @@ export default function() {
 		addBlankToExternal: true,
 	}})
 
-	// Manually set internalUrls values because defaultsDeep doesn't replace
-	// arrays when found (it replaces items by matching on the key)
+	// Manually set internalUrls values, can't use defaultsDeep for this, see
+	// https://github.com/BKWLD/cloak-utils/issues/3
 	if (!this.options.anchorParser?.internalUrls) {
 		this.options.anchorParser.internalUrls = nonEmpty([
 

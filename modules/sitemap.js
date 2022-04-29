@@ -8,17 +8,20 @@ export default function() {
 	if (!isGenerating) return
   if (!process.env.URL) return // Sitemap fatally errors if missing
 
-	// Configure to load from project directory
+	// Set defaults
 	defaultsDeep(this.options, { sitemap: {
 
 		// Get the hostname from Netlify
 		hostname: process.env.URL,
 
-		// Exclude all static routes, assuming everything is driven from
-		// generate.routes
-		exclude: ['**'],
-
 	}})
+
+	// Exclude all static routes, assuming everything is driven from
+	// generate.routes. Can't use defaultsDeep for this, see
+	// https://github.com/BKWLD/cloak-utils/issues/3
+	if (!this.options.sitemap.exclude) {
+		this.options.sitemap.exclude = ['**']
+	}
 
 	// Register the module
 	requireOnce(this, '@nuxtjs/sitemap')
