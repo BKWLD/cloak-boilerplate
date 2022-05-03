@@ -4,9 +4,6 @@
 import { isGenerating } from '../helpers/env'
 export default function() {
 
-	// Always show output
-	this.options.build.quiet = false
-
 	// Exit immediately when a route fails
 	this.nuxt.hook('generate:routeFailed', ({ errors }) => {
 		errors.forEach(error => console.error(error))
