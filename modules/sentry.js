@@ -44,6 +44,7 @@ export default function() {
 }
 
 // Boilerplate ignoreErorrs
+// https://gist.github.com/impressiver/5092952
 export const ignoreErrors = [
 	// Random plugins/extensions
 	'top.GLOBALS',
