@@ -15,7 +15,7 @@ export default function() {
 		// Enable during dev for using GTM preview mode as long as a GTM_ID was
 		// specified. We still want to add the module so that calls to $gtm don't
 		// fail locally if you comment out the GTM_ID.
-		enabled: !process.env.GTM_ID,
+		enabled: !!process.env.GTM_ID,
 
 		// This wasn't always the case, but these events appeat to fire after
 		// the page title is updated. And, when testing this, I found that the
