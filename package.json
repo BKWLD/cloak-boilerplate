@@ -10,7 +10,7 @@
 		"dev": "nuxt dev demo",
 		"build": "nuxt build demo",
 		"start": "nuxt start demo",
-		"generate": "nuxt generate --fail-on-error --target=static demo"
+		"generate": "nuxt generate --target=static demo"
 	},
 	"dependencies": {
 		"@bkwld/credits": "^0.3.0",
