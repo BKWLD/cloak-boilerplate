@@ -14,6 +14,8 @@ export default function() {
 		// Don't trigger loader UI
 		progress: false,
 
+		// Retry failed network requests up to 3 times
+		retry: true,
 	}})
 
 	// Add the Axios Nuxt module late so it can be used in plugins
