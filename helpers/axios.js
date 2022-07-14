@@ -5,7 +5,9 @@ import isRetryAllowed from 'is-retry-allowed'
 export function retryCondition(error) {
 	// Get the request body
 	const data = error.config?.data
-	const requestBody = data ? JSON.parse(data) : false
+	let requestBody;
+	try { requestBody = data ? JSON.parse(data) : false } // If there's data, check if it's JSON
+	catch (e) { requestBody = false} // JSON.parse will throw an error if not JSON
 
 	// Limit to 500 codes
 	const isRetryableError = error.code != 'ECONNABORTED' &&
