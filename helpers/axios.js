@@ -23,7 +23,7 @@ export function retryCondition(error) {
 	// that is a string that doesn't contain mutation
 	const POSTWithQueryButNoMutation =
 		error.config.method == 'post' && requestBody &&
-		requestBody.query && !requestBody.query.includes('mutation')
+		typeof requestBody.query === 'string' && !requestBody.query.includes('mutation')
 
 	// Retry on Idempotent methods
 	const isIdempotentMethod = ['get', 'head', 'options', 'put', 'delete']
