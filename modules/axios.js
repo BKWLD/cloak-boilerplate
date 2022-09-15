@@ -3,7 +3,7 @@
  */
 import defaultsDeep from 'lodash/defaultsDeep'
 import { requireLate } from '@cloak-app/utils'
-import { isNetworkError } from 'axios-retry'
+import { isNetworkError, isRetryableError } from 'axios-retry'
 export default function() {
 
 	// Set default config
@@ -41,11 +41,10 @@ function isGQLQuery(error) {
 	if (!data) return
 
 	// ... and contains JSON
-	let body
-	try { body = JSON.parse(data) }
+	let query
+	try { query = JSON.parse(data).query }
 	catch (e) { return }
 
-	// Ensure the request is not a mutation
-	return typeof body.query === 'string' && !body.query.includes('mutation')
+	// Ensure the request is not a mutation and that the error is retryable
+	return !query.includes('mutation') && isRetryableError(error)
 }
-
