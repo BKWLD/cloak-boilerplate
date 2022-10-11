@@ -36,8 +36,6 @@ export default function() {
 		}
 	}})
 
-	// Add the PWA module when not running dev mode. During dev mode, the
-	// manifest.json was emitting 404 responses.  These only went away when
-	// fully disabling the meta and manifest properites.
-	if (!isDev) requireOnce(this, '@nuxtjs/pwa')
+	// Add the PWA module
+	requireOnce(this, '@nuxtjs/pwa')
 }
