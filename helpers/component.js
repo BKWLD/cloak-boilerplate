@@ -1,6 +1,7 @@
 /*
  * Helpers related to Vue and component-ness
  */
+import Vue from 'vue'
 
 // Mount a component on the body, like a modal, and return the mounted component
 // instance. The "component" argument should be a Vue component instance, like
