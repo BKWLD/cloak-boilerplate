@@ -5,8 +5,8 @@
 // Add two decimal places
 export function twoDecimals(val) {
 	const locale = navigator?.language || 'en-US'
-	return val.toLocaleString(locale, {
+	return Number(val).toLocaleString(locale, {
 		minimumFractionDigits: 2,
-		maximumFractionDigits: 20,
+		maximumFractionDigits: 2,
 	})
 }
