@@ -34,9 +34,14 @@ export default function() {
 
 	// Disable cssnano's Calc transfrom, which beefs with fluid(). The `plugins`
 	// property wasn't set by default, which is why I'm using defaultsDeep here.
-	defaultsDeep(this.options.build.postcss, { plugins: {
-		cssnano: isDev ? false :
-			{ preset: [ 'default', { calc: false } ] }
-	}})
+	const postcssOptions = { plugins: {
+		cssnano: isDev ? false : { preset: [ 'default', { calc: false } ] }
+	}}
+	if (this.options.build.postcss.postcssOptions) { // Nuxt 2.16
+		defaultsDeep(this.options.build.postcss.postcssOptions, postcssOptions)
+	} else { // < Nuxt 2.16
+		defaultsDeep(this.options.build.postcss, postcssOptions)
+	}
+
 
 }
