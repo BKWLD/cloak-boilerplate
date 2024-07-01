@@ -18,7 +18,7 @@ export default function() {
 	})
 	if (polyfillIoKeywords.length) {
 		this.options.head.script.push({
-			src: 'https://polyfill.io/v3/polyfill.min.js?features=' +
+			src: 'https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=' +
 				polyfillIoKeywords.join('%2C'),
 			hid: 'polyfill.io',
 			body: true,
