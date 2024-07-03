@@ -10,8 +10,10 @@ export default function() {
 	this.options.generate.fallback = isGenerating ? false : '404.html'
 
 	// Restrict the number of simulateneous requests so we don't consume too
-	// many server connections.
-	this.options.generate.concurrency = 20
+	// many server connections.  500 is nuxt default
+	if (this.options.generate.concurrency == 500) {
+		this.options.generate.concurrency = 20
+	}
 
 	// Don't use Nuxt 2.13 Crawler since we're explicitly creating all the
 	// routes we care about and don't want to generate dead links.
