@@ -43,6 +43,7 @@
 	"devDependencies": {
 		"@cloak-app/demo-theme": "^1.0.5",
 		"@nuxt/content": "^1.14.0",
+		"axios-mock-adapter": "^1.21.2",
 		"nuxt": "^2.14.0"
 	}
 }

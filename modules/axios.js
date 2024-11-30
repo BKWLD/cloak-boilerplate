@@ -3,6 +3,7 @@
  */
 import defaultsDeep from 'lodash/defaultsDeep'
 import { requireLate } from '@cloak-app/utils'
+import { join } from 'path'
 export default function() {
 
 	// Set default config
@@ -14,10 +15,14 @@ export default function() {
 		// Don't trigger loader UI
 		progress: false,
 
-		// Retry failed network requests up to 3 times
-		retry: true,
 	}})
+
+	// Add custom axios-retry functionality
+	this.addPlugin({
+		src: join(__dirname, '../plugins/axios-retry.js')
+	})
 
 	// Add the Axios Nuxt module late so it can be used in plugins
 	requireLate(this, '@nuxtjs/axios')
 }
+
